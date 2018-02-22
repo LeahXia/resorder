@@ -1,0 +1,7 @@
+#menu {
+  margin-top: 80px; }
+  #menu #dishName {
+    font-size: 26px; }
+  #menu #dishPrice {
+    font-size: 24px;
+    color: #555; }

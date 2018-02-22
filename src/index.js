@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/header';
+import Menu from './components/menu';
+
+import data from './menu-data';
 
 // const App = (props) => {
 //   return (
@@ -21,4 +24,9 @@ import Header from './components/header';
 ReactDOM.render(
   <Header />,
   document.getElementById('header')
+);
+
+ReactDOM.render(
+  <Menu dishes={data.dishes} />,
+  document.getElementById('menu')
 );

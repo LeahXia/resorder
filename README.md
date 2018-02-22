@@ -1,7 +1,7 @@
 #resorder
 
 
-
+<br />
 
 OVERALL:
 
@@ -12,7 +12,7 @@ When arrive at the restaurant,  customers will be provided with an iPad to view 
 When submit, the order will automatically shown to the chef.
 
 
-
+<br />
 
 FEATURES:
 
@@ -27,7 +27,7 @@ Feature 4: Submit Order and save order to database
 Feature 5: Display order to chef
 
 
-
+<br />
 
 LANGUAGES AND TOOLS:
 
@@ -36,3 +36,7 @@ React
 Node.js
 
 MongoDB
+
+JQuery
+
+Sass
