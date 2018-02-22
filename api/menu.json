@@ -1,0 +1,24 @@
+{
+  "dishes":[
+    {
+      "id":1,
+      "name":"Fries",
+      "price":4
+    },
+    {
+      "id":1,
+      "name":"Lobster Bisque",
+      "price":5.95
+    },
+    {
+      "id":1,
+      "name":"Caesar Selections",
+      "price":8.95
+    },
+    {
+      "id":1,
+      "name":"Crab Cake Sandwich",
+      "price":7.95
+    }
+  ]
+}

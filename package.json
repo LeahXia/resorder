@@ -4,7 +4,6 @@
   "description": "A web app build for a local restaurant for their digital ordering system.",
   "main": "index.js",
   "scripts": {
-    /* "test": "echo \"Error: no test specified\" && exit 1", */
     "start": "babel-node server.js --ignor public/",
     "dev": "webpack -wd"
   },
@@ -23,7 +22,9 @@
   },
   "homepage": "https://github.com/LeahXia/resorder#readme",
   "dependencies": {
+    "ejs": "^2.5.7",
     "express": "^4.16.2",
+    "json-loader": "^0.5.7",
     "mongodb": "^3.0.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
