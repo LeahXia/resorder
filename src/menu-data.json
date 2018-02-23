@@ -19,6 +19,46 @@
       "id":4,
       "dishName":"Crab Sandwich",
       "dishPrice":7.95
+    },
+    {
+      "id":5,
+      "dishName":"Fries",
+      "dishPrice":4
+    },
+    {
+      "id":6,
+      "dishName":"Lobster Bisque",
+      "dishPrice":5.95
+    },
+    {
+      "id":7,
+      "dishName":"Caesar Selections",
+      "dishPrice":8.95
+    },
+    {
+      "id":8,
+      "dishName":"Crab Sandwich",
+      "dishPrice":7.95
+    },
+    {
+      "id":9,
+      "dishName":"Fries",
+      "dishPrice":4
+    },
+    {
+      "id":10,
+      "dishName":"Lobster Bisque",
+      "dishPrice":5.95
+    },
+    {
+      "id":11,
+      "dishName":"Caesar Selections",
+      "dishPrice":8.95
+    },
+    {
+      "id":12,
+      "dishName":"Crab Sandwich",
+      "dishPrice":7.95
     }
   ]
 }

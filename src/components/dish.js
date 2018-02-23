@@ -1,9 +1,17 @@
 import React, { Component} from 'react';
 import propTypes from 'prop-types';
 
+var dishCount = 0;
+var total = 0;
+
 class Dish extends Component {
+
   handleClick = () => {
-    console.log(this.props.dishName);
+    dishCount += 1;
+    total += this.props.dishPrice;
+    var totalFixed2 = Number(total).toFixed(2);
+    var orderInfo = {...this.props,'dishCount':dishCount, 'total':totalFixed2};
+    this.props.callbackFromParent(orderInfo);
   };
   render(){
     return (
@@ -13,7 +21,7 @@ class Dish extends Component {
           {this.props.dishName}
         </div>
         <div className="dishPrice">
-          {this.props.dishPrice}
+          $ {this.props.dishPrice}
         </div>
       </div>
     );
@@ -22,7 +30,8 @@ class Dish extends Component {
 
 Dish.propTypes = {
   dishName : propTypes.string.isRequired,
-  dishPrice : propTypes.number.isRequired
+  dishPrice : propTypes.number.isRequired,
+  callbackFromParent : propTypes.func.isRequired
 };
 
 

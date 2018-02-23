@@ -1,5 +1,8 @@
 .menu {
-  margin-top: 80px; }
+  margin: 40px auto 80px; }
+  .menu .dish {
+    margin: 20px auto;
+    text-align: center; }
   .menu .dishImage {
     width: 80%;
     height: 200px;
@@ -12,3 +15,12 @@
 
 .link {
   cursor: pointer; }
+
+#OrderPreview {
+  background-color: #eee;
+  position: fixed;
+  bottom: 0;
+  height: 60px;
+  padding: 0 60px 0 30px; }
+  #OrderPreview #total {
+    text-align: right; }
