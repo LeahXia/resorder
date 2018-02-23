@@ -1,24 +1,30 @@
 import React from 'react';
-import propTypes from 'prop-types';
 import Dish from './dish';
+import propTypes from 'prop-types';
 
 
 class Menu extends React.Component {
+
+  state = {
+    dishes: this.props.initialDishes
+  };
+
+  componentDidMount(){
+  }
+
   render (){
     return(
       <div className="menu">
-        <div>
-          {this.props.dishes.map(dish =>
-            <Dish {...dish}/>
-          )}
-        </div>
+        {this.state.dishes.map(dish =>
+          <Dish key={dish.id} {...dish}/>
+        )}
       </div>
     );
   }
 }
 
 Menu.propTypes = {
-  dishes: propTypes.array.isRequired
+  initialDishes: propTypes.array.isRequired
 };
 
 export default Menu;

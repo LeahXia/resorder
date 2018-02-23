@@ -1,7 +1,14 @@
-#menu {
+.menu {
   margin-top: 80px; }
-  #menu #dishName {
+  .menu .dishImage {
+    width: 80%;
+    height: 200px;
+    border: 1px solid #eee; }
+  .menu .dishName {
     font-size: 26px; }
-  #menu #dishPrice {
+  .menu .dishPrice {
     font-size: 24px;
     color: #555; }
+
+.link {
+  cursor: pointer; }

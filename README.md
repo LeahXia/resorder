@@ -3,7 +3,7 @@
 
 <br />
 
-OVERALL:
+<em>OVERALL:</em>
 
 RESORDER is a web app build for a local restaurant for their digital ordering system.
 
@@ -14,7 +14,7 @@ When submit, the order will automatically shown to the chef.
 
 <br />
 
-FEATURES:
+<em>FEATURES:</em>
 
 Feature 1: Display menu
 
@@ -29,14 +29,23 @@ Feature 5: Display order to chef
 
 <br />
 
-LANGUAGES AND TOOLS:
+<em>LANGUAGES AND TOOLS:</em>
 
-React
+A.)React
 
-Node.js
+B.)Node.js
 
-MongoDB
+C.)MongoDB
 
-JQuery
+D.)JQuery
 
-Sass
+E.)Sass
+
+
+<br />
+
+
+<em>Tech notes:</em>
+
+A.)This App will still work with JavaScripe disabled on client side
+B.)Search engine optimized

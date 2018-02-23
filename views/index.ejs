@@ -1,9 +1,7 @@
+<script type="text/javascript">
+  window.initialData = <%- JSON.stringify(initialData) -%>
+</script>
+
 <%- include('header') -%>
-
-  <div id="header"><%- content -%></div>
-  <div id="menu"><%- content -%></div>
-  <div id="order-sum" class="col-sm-4">
-
-  </div>
-
+  <div id="root"><%- initialMarkup -%></div>
 <%- include('footer') -%>
