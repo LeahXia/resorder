@@ -30,16 +30,35 @@
 }
 
 
-#OrderPreview{
+#orderPreview{
   background-color: #eee;
   position: fixed;
   bottom: 0;
   height: 60px;
   padding: 0 60px 0 30px;
 
-  #submitOrder{
-    width: 200px;
+  #submitOrder, #viewOrder{
+    width: 140px;
     height: 40px;
-    margin-top: 10px;
+    margin: 10px;
+  }
+}
+
+#orderDetail{
+  background-color: #ddd;
+  position: fixed;
+  bottom: 60px;
+  height: auto;
+  width: 100%;
+  padding: 20px;
+}
+
+.orderItem{
+  height: 50px;
+  width: 100%;
+  margin-top: 10px;
+
+  .deleteItem{
+    margin:10px;
   }
 }
