@@ -22,5 +22,7 @@
   bottom: 0;
   height: 60px;
   padding: 0 60px 0 30px; }
-  #OrderPreview #total {
-    text-align: right; }
+  #OrderPreview #submitOrder {
+    width: 200px;
+    height: 40px;
+    margin-top: 10px; }

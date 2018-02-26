@@ -8,18 +8,20 @@ const Header = (props) => {
         {props.headerMessage}
       </h2>
       <h1 className="text-center" style={{color:'#555'}}>
-        Little Buddle Restaurant
+        {props.message}
       </h1>
     </div>
   );
 };
 
 Header.propTypes = {
-  headerMessage: propTypes.string.isRequired
+  headerMessage: propTypes.string.isRequired,
+  message: propTypes.string.isRequired
 };
 
 Header.defaultProps = {
-  headerMessage: 'ResOrder'
+  headerMessage: 'ResOrder',
+  message: 'Little Buddy Restaurant'
 };
 
 export default Header;

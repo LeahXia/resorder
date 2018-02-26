@@ -4,22 +4,31 @@ import Menu from './menu';
 import OrderPreview from './orderPreview';
 import propTypes from 'prop-types';
 
-
 class App extends React.Component {
 
-  appOrderData = (orderInfo) => {
-    this.setState({orderInfo:orderInfo});
+  state = {
+    dishes : this.props.initialDishes,
+    pageHeader : 'Little Buddy Restaurant',
+    orderInfo: {'dishCount':0, 'total':0, 'dishID':0}
   };
 
-  state = {
-    orderInfo: {}
+  //when dish clicked, get order data and dishID of that dish from dish.js
+  appOrderData = (orderInfo) => {
+    var dishID = orderInfo.dishID;
+    this.setState({
+      currentDishID: dishID,
+      orderInfo:orderInfo
+    });
   };
 
   render(){
     return (
       <div id="app">
         <Header />
-        <Menu initialDishes={this.props.initialDishes} callbackFromParent={this.appOrderData} />
+        <Menu
+          initialDishes={this.state.dishes}
+          onDishClick={this.appOrderData}
+        />;
         <OrderPreview orderInfo={this.state.orderInfo}/>
       </div>
     );
@@ -27,7 +36,7 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  initialDishes : propTypes.array.isRequired,
+  initialDishes : propTypes.object.isRequired,
 };
 
 export default App;

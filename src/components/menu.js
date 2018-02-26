@@ -4,10 +4,6 @@ import propTypes from 'prop-types';
 
 class Menu extends React.Component {
 
-  orderData = (orderInfo) => {
-    this.props.callbackFromParent(orderInfo);
-  }
-
   state = {
     dishes: this.props.initialDishes
   };
@@ -18,8 +14,12 @@ class Menu extends React.Component {
   render (){
     return(
       <div className="menu">
-        {this.state.dishes.map(dish =>
-          <Dish key={dish.id} {...dish} callbackFromParent={this.orderData}/>
+        {Object.keys(this.state.dishes).map(dishID =>
+          <Dish
+            key={dishID}
+            {...this.state.dishes[dishID]}
+            onClick={this.props.onDishClick}
+          />
         )}
       </div>
     );
@@ -27,8 +27,8 @@ class Menu extends React.Component {
 }
 
 Menu.propTypes = {
-  initialDishes: propTypes.array.isRequired,
-  callbackFromParent : propTypes.func.isRequired
+  initialDishes: propTypes.object.isRequired,
+  onDishClick : propTypes.func.isRequired
 };
 
 export default Menu;
