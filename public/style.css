@@ -35,6 +35,8 @@
   width: 100%;
   padding: 20px;
   overflow: scroll; }
+  #orderDetail h2 {
+    text-align: center; }
   #orderDetail .orderItem {
     height: 50px;
     width: 100%;

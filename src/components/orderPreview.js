@@ -1,21 +1,18 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
+let orderVisible = false;
 
 class OrderPreview extends React.Component {
 
-  // state = {
-  //   dishCount:0,
-  //   total:0
-  // };
-
   handelViewOrderClicked = () => {
-
-  }
+    orderVisible =  !orderVisible;
+    this.props.viewOrderDetail(orderVisible);
+  };
 
   handelSubmitClicked = () => {
 
-  }
+  };
 
   render (){
     return(
@@ -32,7 +29,8 @@ class OrderPreview extends React.Component {
 OrderPreview.propTypes = {
   orderInfo : propTypes.object,
   dishCount : propTypes.number,
-  total : propTypes.number
+  total : propTypes.number,
+  viewOrderDetail : propTypes.func.isRequired
 };
 
 

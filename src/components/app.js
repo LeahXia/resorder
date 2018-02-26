@@ -12,7 +12,8 @@ class App extends React.Component {
   state = {
     dishes : this.props.initialDishes,
     orderInfo: {'dishCount':0, 'total':0, 'dishID':0},
-    dishesOrdered:dishesOrdered
+    dishesOrdered:dishesOrdered,
+    orderVisible:false
   };
 
   //when dish clicked, get order data and dishID of that dish from dish.js
@@ -24,18 +25,13 @@ class App extends React.Component {
     var totalFixed2 = Number(total).toFixed(2);
 
     var quantity = 1;
-    console.log(`before : ${dishesOrdered[dishID]}`);
 
     if (dishesOrdered[dishID]) {
       quantity = clickedDish.quantity + 1;
-      console.log(`after+1: ${quantity}`);
     }
 
     dishesOrdered[dishID] = clickedDish;
     dishesOrdered[dishID].quantity = quantity;
-    console.log(`dishesOrdered[dishID] : ${dishesOrdered[dishID].dishName}`);
-    console.log(`dishesOrdered[dishID] : ${dishesOrdered[dishID].quantity}`);
-
 
     this.setState({
       dishesOrdered: dishesOrdered,
@@ -64,12 +60,12 @@ class App extends React.Component {
       dishesOrdered:dishesOrdered,
       orderInfo:{'dishCount':dishCount, 'total':totalFixed2, 'dishID':dishID}
     });
-
-    console.log('tap delete ');
   };
 
-  viewOrderDetail = () => {
-    document.getElementById('OrderDetail').classList.toggle('d-none');
+  viewOrderDetail = (orderVisible) => {
+    this.setState({
+      orderVisible:orderVisible
+    });
   };
 
   render(){
@@ -80,11 +76,15 @@ class App extends React.Component {
           initialDishes={this.state.dishes}
           onDishClick={this.onAddToOrderClick}
         />
-        <OrderPreview orderInfo={this.state.orderInfo}/>
+        <OrderPreview
+          orderInfo={this.state.orderInfo}
+          viewOrderDetail={this.viewOrderDetail}
+        />
         <OrderDetail
           dishesOrdered={this.state.dishesOrdered}
           onAddOneClick={this.onAddToOrderClick}
           onDeleteDishClick={this.onDeleteDishClick}
+          orderVisible={this.state.orderVisible}
         />
       </div>
     );
