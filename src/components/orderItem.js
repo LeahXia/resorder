@@ -8,16 +8,27 @@ class OrderItem extends React.Component {
   //   dishes: this.props.initialDishes
   // };
 
-  handleClick = () => {
-    this.props.onClick(this.props.dishOrdered.id);
+  handleDeleteAll = () => {
+    this.props.onDeleteDishClick(this.props.dishOrdered.id,'all');
+  }
+
+  handleAddOne = () => {
+    this.props.onAddOneClick(this.props.dishOrdered.id);
+  }
+
+  handleDeleteOne = () => {
+    this.props.onDeleteDishClick(this.props.dishOrdered.id,'one');
   }
 
   render (){
     return(
       <div className="orderItem col-sm-12">
         <h3 className="col-sm-4" id="dishName">{this.props.dishOrdered.dishName}</h3>
-        <h3 className="col-sm-4" id="dishPrice">{this.props.dishOrdered.dishPrice}</h3>
-        <button className="col-sm-2 btn btn-danger deleteItem" onClick={this.handleClick}>Delete</button>
+        <h3 className="col-sm-3" id="dishPrice">$ {this.props.dishOrdered.dishPrice}</h3>
+        <button className="col-sm-1 btn btn-default minusOne" onClick={this.handleDeleteOne}> - </button>
+        <h3 className="col-sm-1 quantity" >{this.props.dishOrdered.quantity}</h3>
+        <button className="col-sm-1 btn btn-default addOne" onClick={this.handleAddOne}> + </button>
+        <button className="col-sm-1 btn btn-danger deleteItem" onClick={this.handleDeleteAll}>Delete</button>
       </div>
     );
   }
@@ -25,7 +36,8 @@ class OrderItem extends React.Component {
 //
 OrderItem.propTypes = {
   dishOrdered: propTypes.object.isRequired,
-  onClick: propTypes.func.isRequired
+  onDeleteDishClick: propTypes.func.isRequired,
+  onAddOneClick: propTypes.func.isRequired
 };
 
 

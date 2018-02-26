@@ -5,19 +5,20 @@ import propTypes from 'prop-types';
 
 
 
-var dishCount = 0;
-var total = 0;
+// var dishCount = 0;
+// var total = 0;
 var orderStamp;
 
 class Dish extends Component {
 
   handleClick = () => {
     //send back dishCount and total data and passdown to orderPreview
-    dishCount += 1;
-    total += this.props.dishPrice;
-    var totalFixed2 = Number(total).toFixed(2);
-    var orderInfo = {'dishCount':dishCount, 'total':totalFixed2, 'dishID':this.props.id};
-    this.props.onClick(orderInfo);
+    // dishCount += 1;
+    // total += this.props.dishPrice;
+    // var totalFixed2 = Number(total).toFixed(2);
+    // var orderInfo = {'dishCount':dishCount, 'total':totalFixed2, 'dishID':this.props.id};
+    var dishID = this.props.id;
+    this.props.onClick(dishID);
 
     if (!orderStamp) {
       orderStamp = new Date().getTime();

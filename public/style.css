@@ -33,11 +33,18 @@
   bottom: 60px;
   height: auto;
   width: 100%;
-  padding: 20px; }
-
-.orderItem {
-  height: 50px;
-  width: 100%;
-  margin-top: 10px; }
-  .orderItem .deleteItem {
-    margin: 10px; }
+  padding: 20px;
+  overflow: scroll; }
+  #orderDetail .orderItem {
+    height: 50px;
+    width: 100%;
+    margin-top: 10px; }
+    #orderDetail .orderItem .quantity {
+      text-align: center; }
+    #orderDetail .orderItem .deleteItem {
+      margin: 15px auto auto 50px;
+      font-size: 18px; }
+    #orderDetail .orderItem .minusOne, #orderDetail .orderItem .addOne {
+      margin: 15px 20px auto;
+      width: 40px;
+      font-size: 18px; }

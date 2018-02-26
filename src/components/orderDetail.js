@@ -5,32 +5,29 @@ import OrderItem from './orderItem';
 
 class OrderDetail extends React.Component {
 
-  state = {
-    dishesOrdered: this.props.dishesOrdered
-  };
+  // state = {
+  //   dishesOrdered: this.props.dishesOrdered
+  // };
 
-  onDeleteClick = (dishID) => {
-    // const index = this.props.dishesOrdered.indexOf(dishID);
-    console.log(this.state.dishesOrdered);
-    // this.state.dishesOrdered.splice(index, 1);
-    delete this.state.dishesOrdered[dishID];
-    console.log(this.state.dishesOrdered);
-    this.setState({
-      dishesOrdered:this.state.dishesOrdered
-    });
-
-
-  }
+  // onDeleteClick = (dishID) => {
+  //   delete this.state.dishesOrdered[dishID];
+  //   this.setState({
+  //     dishesOrdered:this.state.dishesOrdered
+  //   });
+  //
+  //
+  // }
 
   render (){
     return(
       <div id="orderDetail">
         <h2>Your Order: </h2>
-        {Object.keys(this.state.dishesOrdered).map(dishID =>
+        {Object.keys(this.props.dishesOrdered).map(dishID =>
           <OrderItem
             key={dishID}
-            dishOrdered={this.state.dishesOrdered[dishID]}
-            onClick={this.onDeleteClick}
+            dishOrdered={this.props.dishesOrdered[dishID]}
+            onAddOneClick={this.props.onAddOneClick}
+            onDeleteDishClick={this.props.onDeleteDishClick}
           />
         )}
       </div>
@@ -39,7 +36,9 @@ class OrderDetail extends React.Component {
 }
 //
 OrderDetail.propTypes = {
-  dishesOrdered : propTypes.object
+  dishesOrdered : propTypes.object.isRequired,
+  onDeleteDishClick: propTypes.func.isRequired,
+  onAddOneClick: propTypes.func.isRequired,
 };
 
 

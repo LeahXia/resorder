@@ -51,14 +51,29 @@
   height: auto;
   width: 100%;
   padding: 20px;
-}
+  overflow:scroll;
 
-.orderItem{
-  height: 50px;
-  width: 100%;
-  margin-top: 10px;
+  .orderItem{
+    height: 50px;
+    width: 100%;
+    margin-top: 10px;
 
-  .deleteItem{
-    margin:10px;
+    .quantity{
+      text-align: center;
+    }
+
+    .deleteItem{
+      margin:15px auto auto 50px;
+      font-size: 18px;
+
+    }
+
+    .minusOne, .addOne{
+      margin: 15px 20px auto;
+      width: 40px;
+      font-size: 18px;
+    }
   }
+
+
 }

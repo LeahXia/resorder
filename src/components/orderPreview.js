@@ -5,16 +5,25 @@ import propTypes from 'prop-types';
 class OrderPreview extends React.Component {
 
   // state = {
-  //   dishes: this.props.initialDishes
+  //   dishCount:0,
+  //   total:0
   // };
+
+  handelViewOrderClicked = () => {
+
+  }
+
+  handelSubmitClicked = () => {
+
+  }
 
   render (){
     return(
       <div className="col-sm-12" id="orderPreview">
         <h3 className="col-sm-4">Dish ordered: {this.props.orderInfo.dishCount}</h3>
         <h3 className="col-sm-4" id="total">Total: {this.props.orderInfo.total}</h3>
-        <button className="col-sm-2 btn btn-primary" id="viewOrder">View Order</button>
-        <button className="col-sm-2 btn btn-primary" id="submitOrder">Submit Order</button>
+        <button className="col-sm-2 btn btn-primary" id="viewOrder" onClick={this.handelViewOrderClicked}>View Order</button>
+        <button className="col-sm-2 btn btn-primary" id="submitOrder" onClick={this.handelSubmitClicked}>Submit Order</button>
       </div>
     );
   }
