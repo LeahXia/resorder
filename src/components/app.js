@@ -73,7 +73,9 @@ class App extends React.Component {
   };
 
   onSubmitOrderClick = () => {
-    api.submitOrder(this.state.dishesOrdered);
+    if (this.state.dishesOrdered.length > 0){
+      api.submitOrder(this.state.dishesOrdered);
+    }
   };
 
   render(){
