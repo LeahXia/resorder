@@ -48,18 +48,20 @@ class App extends React.Component {
       quantity = clickedDish['quantity'];
     }
 
-    var dishCount = this.state.orderInfo['dishCount'] - quantity;
-    var total = Number(this.state.orderInfo['total']) - clickedDish.dishPrice * quantity ;
-    var totalFixed2 = Number(total).toFixed(2);
+    if ((dishesOrdered[dishID] && dishesOrdered[dishID].quantity > 0) || dishesOrdered[dishID] == null) {
+      var dishCount = this.state.orderInfo['dishCount'] - quantity;
+      var total = Number(this.state.orderInfo['total']) - clickedDish.dishPrice * quantity ;
+      var totalFixed2 = Number(total).toFixed(2);
 
-    if (deleteAmount === 'one'){
-      dishesOrdered[dishID].quantity -= 1;
+      if (deleteAmount === 'one'){
+        dishesOrdered[dishID].quantity -= 1;
+      }
+
+      this.setState({
+        dishesOrdered:dishesOrdered,
+        orderInfo:{'dishCount':dishCount, 'total':totalFixed2, 'dishID':dishID}
+      });
     }
-
-    this.setState({
-      dishesOrdered:dishesOrdered,
-      orderInfo:{'dishCount':dishCount, 'total':totalFixed2, 'dishID':dishID}
-    });
   };
 
   viewOrderDetail = (orderVisible) => {
