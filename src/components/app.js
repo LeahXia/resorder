@@ -11,7 +11,7 @@ class App extends React.Component {
 
   state = {
     dishes : this.props.initialDishes,
-    orderInfo: {'dishCount':0, 'total':0, 'dishID':0},
+    orderInfo: {'dishCount':0, 'total':0, 'dishID':''},
     dishesOrdered:dishesOrdered,
     orderVisible:false
   };

@@ -9,15 +9,15 @@ class OrderItem extends React.Component {
   // };
 
   handleDeleteAll = () => {
-    this.props.onDeleteDishClick(this.props.dishOrdered.id,'all');
+    this.props.onDeleteDishClick(this.props.dishOrdered._id,'all');
   }
 
   handleAddOne = () => {
-    this.props.onAddOneClick(this.props.dishOrdered.id);
+    this.props.onAddOneClick(this.props.dishOrdered._id);
   }
 
   handleDeleteOne = () => {
-    this.props.onDeleteDishClick(this.props.dishOrdered.id,'one');
+    this.props.onDeleteDishClick(this.props.dishOrdered._id,'one');
   }
 
   render (){

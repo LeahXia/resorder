@@ -7,7 +7,7 @@ class Dish extends Component {
 
   handleClick = () => {
 
-    var dishID = this.props.id;
+    var dishID = this.props._id;
     this.props.onClick(dishID);
 
     if (!orderStamp) {
@@ -33,7 +33,7 @@ class Dish extends Component {
 Dish.propTypes = {
   dishName : propTypes.string.isRequired,
   dishPrice : propTypes.number.isRequired,
-  id : propTypes.number.isRequired,
+  _id : propTypes.string.isRequired,
   onClick : propTypes.func.isRequired
 };
 

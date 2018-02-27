@@ -21,7 +21,7 @@ router.get('/dishes',(req, res) => {
       res.send({dishes});
       return;
     }
-    dishes[dish.id] = dish;
+    dishes[dish._id] = dish;
   });
 });
 
@@ -34,7 +34,7 @@ router.get('/tempOrder',(req, res) => {
       res.send({dishes});
       return;
     }
-    dishes[dish.id] = dish;
+    dishes[dish._id] = dish;
   });
 
 });
