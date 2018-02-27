@@ -39,27 +39,17 @@ router.get('/tempOrder',(req, res) => {
 
 });
 
-// router.post('/tempOrder', (req, res) => {
-//   const contestId = ObjectID(req.body.contestId);
-//   const dishName = req.body.dishName;
-//   // validation ...
-//   mdb.collection('tempOrder').insertOne({ dishName }).then(result =>
-//     mdb.collection('dishes').findAndModify(
-//       { _id: contestId },
-//       [],
-//       { $push: { nameIds: result.insertedId } },
-//       { new: true }
-//     ).then(doc =>
-//       res.send({
-//         updatedContest: doc.value,
-//         newName: { _id: result.insertedId, name }
-//       })
-//     )
-//   )
-//   .catch(error => {
-//     console.error(error);
-//     res.status(404).send('Bad Request');
-//   });
-// });
+router.post('/orders', (req, res) => {
+  const dishesOrdered = req.body;
+  const order = {dishesOrdered};
+
+  mdb.collection('orders').insertOne(order, function(err){
+    assert.equal(null, err);
+    var orderID = order._id;
+    res.send({
+      [orderID]:dishesOrdered
+    });
+  });
+});
 
 export default router;

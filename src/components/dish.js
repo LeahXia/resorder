@@ -1,18 +1,12 @@
 import React, { Component} from 'react';
 import propTypes from 'prop-types';
 
-var orderStamp;
-
 class Dish extends Component {
 
   handleClick = () => {
 
     var dishID = this.props._id;
     this.props.onClick(dishID);
-
-    if (!orderStamp) {
-      orderStamp = new Date().getTime();
-    }
 
   };
   render(){

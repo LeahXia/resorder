@@ -4,6 +4,8 @@ import Menu from './menu';
 import OrderPreview from './orderPreview';
 import OrderDetail from './OrderDetail';
 import propTypes from 'prop-types';
+import * as api from '../api';
+
 
 var dishesOrdered = {};
 
@@ -70,6 +72,10 @@ class App extends React.Component {
     });
   };
 
+  onSubmitOrderClick = () => {
+    api.submitOrder(this.state.dishesOrdered);
+  };
+
   render(){
     return (
       <div id="app">
@@ -81,6 +87,7 @@ class App extends React.Component {
         <OrderPreview
           orderInfo={this.state.orderInfo}
           viewOrderDetail={this.viewOrderDetail}
+          onSubmitOrderClick={this.onSubmitOrderClick}
         />
         <OrderDetail
           dishesOrdered={this.state.dishesOrdered}

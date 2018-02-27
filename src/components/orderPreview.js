@@ -11,7 +11,7 @@ class OrderPreview extends React.Component {
   };
 
   handelSubmitClicked = () => {
-
+    this.props.onSubmitOrderClick();
   };
 
   render (){
@@ -30,7 +30,8 @@ OrderPreview.propTypes = {
   orderInfo : propTypes.object,
   dishCount : propTypes.number,
   total : propTypes.number,
-  viewOrderDetail : propTypes.func.isRequired
+  viewOrderDetail : propTypes.func.isRequired,
+  onSubmitOrderClick : propTypes.func.isRequired
 };
 
 

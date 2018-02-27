@@ -5,9 +5,12 @@ import apiRouter from './api';
 import sassMiddleware from 'node-sass-middleware';
 import path from 'path';
 import serverRender from './serverRender';
+import bodyParser from 'body-parser';
+
 
 
 const server = express();
+server.use(bodyParser.json());
 
 server.use(sassMiddleware({
   src:path.join(__dirname, 'sass'),

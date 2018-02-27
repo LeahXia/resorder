@@ -1,4 +1,4 @@
-// import axios from 'axios';
+import axios from 'axios';
 
 // export const fetchContest = contestId => {
 //   return axios.get(`/api/contests/${contestId}`)
@@ -14,3 +14,9 @@
 //   return axios.post('/src/order-data.json', {dishID,dishName})
 //     .then(resp => resp.data);
 // };
+
+
+export const submitOrder = (dishesOrdered) => {
+  return axios.post('/api/orders', dishesOrdered)
+    .then(resp => resp.data);
+};
