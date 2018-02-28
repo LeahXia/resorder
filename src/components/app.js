@@ -34,7 +34,6 @@ class App extends React.Component {
 
     dishesOrdered[dishID] = clickedDish;
     dishesOrdered[dishID].quantity = quantity;
-
     this.setState({
       dishesOrdered: dishesOrdered,
       orderInfo:{'dishCount':dishCount, 'total':totalFixed2, 'dishID':dishID}
@@ -73,8 +72,10 @@ class App extends React.Component {
   };
 
   onSubmitOrderClick = () => {
-    if (this.state.dishesOrdered.length > 0){
-      api.submitOrder(this.state.dishesOrdered);
+    var dishesOrdered = this.state.dishesOrdered;
+    var orderLength = Object.keys(dishesOrdered).length;
+    if (orderLength > 0){
+      api.submitOrder(dishesOrdered);
     }
   };
 
